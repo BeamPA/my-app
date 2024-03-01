@@ -129,7 +129,7 @@ function ImportRoom() {
             console.log(formDataWithYear)
             formDataWithYear.map(async(item) => {
               try {
-                const response = await axios.post('http://localhost:4000/room/importFromExcelroom', item);
+                const response = await axios.post('http://localhost:4000/room/importFromExcelroom' ,item);
                 console.log(response.data);
               } catch (error) {
                 console.error(error);

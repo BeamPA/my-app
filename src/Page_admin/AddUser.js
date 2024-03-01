@@ -1,6 +1,6 @@
 import '../style.css';
 import React ,{useState} from 'react';
-
+import { Link } from 'react-router-dom';
 function AddUser() {
     const [name ,setName] = useState('')
   const [email ,setEmail] = useState('')
@@ -15,8 +15,9 @@ function AddUser() {
           fullName: name,
           email: email,
           isAdmin: isAdmin
-        })        
+        })    
       })
+      
     } catch (error) {
       console.error(error);      
     }
@@ -59,10 +60,12 @@ function AddUser() {
               </div>
             </div>
             <div className='flex py-3 w-9/12 rounded-lg text-xl justify-end items-center'>
+              
               <button
-                className='bg-yes-color p-2 rounded-lg text-white w-1/5 ml-2 drop-shadow-md hover:bg-green-900 active:bg-neutral-800' type='submit'>
-                ตกลง
+                className='bg-yes-color p-2 rounded-lg text-white w-1/5 ml-2 drop-shadow-md hover:bg-green-900 active:bg-neutral-800' type='submit' >
+                <Link to = "/UserAll">ตกลง</Link>
               </button>
+              
               <button
                 className='bg-no-color p-2 rounded-lg text-white w-1/5 ml-2 drop-shadow-md hover:bg-red-900 active:bg-neutral-800' type='reset'>
                 ยกเลิก
